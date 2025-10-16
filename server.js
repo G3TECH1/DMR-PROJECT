@@ -27,9 +27,9 @@ const mailTrain = mail.createTransport({
         }
     })
 
+const connectionString = process.env.MONGO_URI;
 
-
-mongoose.connect("mongodb://127.0.0.1:27017/DMR-DB-SERVER")
+mongoose.connect(connectionString )
 try{
     console.log("DB connected")
 }catch(error){
@@ -230,4 +230,5 @@ const port = process.env.PORT || 3000;
 app.listen(port, ()=>{
     console.log("Server is running")
 })
+
 
