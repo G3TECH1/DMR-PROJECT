@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIESEL MOBILE REFILL ::ORDER::</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <header>
+        <div class="white-part">
+            <marquee behavior="" direction="left">
+                <p class="No"><img src="/img/phone-call.png" alt="" width="19">0912-200-2000</p>
+            </marquee>
+        
+            <div class="img">
+                <img src="/img/logo.png" alt="Home" width="100">
+                <p style="color: darkcyan;">DIESEL MOBILE REFILL</p>
+            </div>
+
+
+            <div class="nav-bar">
+                <img src="/img/hamburger-menu.jpg" alt="Open menu" width="27" class="hamburger">
+                <nav class="dropdown-menu">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/order">ORDER</a></li>
+                        <li><a href="/about">ABOUT US</a></li>
+                        <li><a href="/mission">MISSION & VISION STATEMENT</a></li>
+                        <li><a href="/contact">CONTACT US</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="green-part">
+            <p class="price"><b>Today's Diesel Price:</b> Call 0912-200-2000</p>
+        </div>
+        
+    </header>
+    <main>
+        <div class="order-body">
+            <h2>ORDER REQUEST FORM</h2>
+
+            <form action="/order" method="post">
+                <p>Product <select name="products" id="">
+                    <option value="Diesel">Diesel</option>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Gas">Gas</option>
+                    <option value="Kerosene">Kerosene</option>
+                </select></p>
+                <p>Priority <select name="priority" id="">
+                    <option value="">select</option>
+                    <option value="High">High</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select></p>
+                <p>Quantity <input type="text" name="quantity" placeholder="(kg or liters)">
+                    <br><span>(liters for Diesel and Engine oil, KG for Cooking Gas)</span> 
+                </p>
+                <p>Location <input type="text" name="locat" id=""></p>
+                <p>Contact Person <input type="text" name="person" id=""></p>
+                <p>Contact Phone <input type="number" name="phone" id=""></p>
+                <p>Contact Email <input type="email" name="email" id=""></p>
+                <p>Payment Mode <select name="pay" id="" >
+                    <option value="cash">Cash</option>
+                    <option value="e-transfer">Electronic Transfer</option>
+                    <option value="pos">POS</option>
+                    <option value="cheque">Cheque</option>
+                </select></p>
+                <p>Description:</p><textarea name="descrip" id="" cols="100" rows="10"></textarea><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <% if(success && success.length > 0){%>
+            <div class="alert-success">
+                <% success.forEach(message =>{ %>
+                     <p style="color: Green;"><%- message %></p>
+                     <button id="cl">Cancel</button>
+                <% }) %>
+            </div>
+       <% }else if(err && err.length > 0){ %>
+            <div class="alert-error">
+                <% for(message of err){ %>
+                    <p style="color: red;"><%- message %></p>
+                    <button id="cl">Cancel</button>
+                    
+                <%}%>
+            </div>
+       <% } %>
+    </main>
+    <footer>
+        <div class="home-footer">
+            <p>&copy 2022 DIESEL REFILL. ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+    <script src="/javascript/script.js"></script>
+</body>
+</html>

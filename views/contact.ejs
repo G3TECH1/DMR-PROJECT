@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIESEL MOBILE REFILL ::CONTACT::</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <header>
+        <div class="white-part">
+            <marquee behavior="" direction="left">
+                <p class="No"><img src="/img/phone-call.png" alt="" width="19">0912-200-2000</p>
+            </marquee>
+        
+            <div class="img">
+                <img src="/img/logo.png" alt="Home" width="100">
+                <p>DIESEL MOBILE REFILL</p>
+            </div>
+
+            
+
+            <div class="nav-bar">
+                <img src="/img/hamburger-menu.jpg" alt="Open menu" width="27" class="hamburger">
+                <nav class="dropdown-menu">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/order">ORDER</a></li>
+                        <li><a href="/about">ABOUT US</a></li>
+                        <li><a href="/mission">MISSION & VISION STATEMENT</a></li>
+                        <li><a href="/contact">CONTACT US</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="green-part">
+            <p class="price"><b>Today's Diesel Price:</b> Call 0912-200-2000</p>
+        </div>
+        
+    </header>
+
+    <main>
+        <div class="contact-body">
+            <h2>HOW TO REACH US</h2>
+            <div class="descrip">
+                <h3>HEAD OFFICE</h3>
+                <p>
+                    Plot 7, Akilo Road,<br>
+                    Ogba-Ikeja, Lagos. <br>
+                    Nigeria
+                </p>
+
+                <h3>BRANCH OFFICE</h3>
+                <p>
+                    3, Opebi Link Road,<br>
+                    Oregun-Ikeja, Lagos. <br>
+                    Nigeria
+                </p>
+            </div>
+
+            <div class="send-email">
+                <h3>SEND US AN EMAIL</h3>
+
+                <div class="email-form">
+                    <p>*Requried Field</p>
+                    <form action="" method="post">
+                        <p>Name* <input type="text" name="name" id="" required></p>
+                        <p>Email* <input type="text" name="email" id="" required></p>
+                        <p>Subject* <input type="text" name="subject" id=""></p>
+                        <p>Message*</p>
+                        <textarea name="msg" id="" cols="100" rows="10" required></textarea><br>
+                        <input type="submit" value="Send Mail" id="">
+                    </form>
+                    <% if(success && success.length > 0){%>
+            <div class="alert-success">
+                <% success.forEach(message =>{ %>
+                     <p style="color: blue;"><%- message %></p>
+                     <button id="cl">Cancel</button>
+                <% }) %>
+            </div>
+       <% }else if(err && err.length > 0){ %>
+            <div class="alert-error">
+                <% for(message of err){ %>
+                    <p style="color: red;"><%- message %></p>
+                    <button id="cl">Cancel</button>
+                <%}%>
+            </div>
+       <% } %>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="home-footer">
+            <p>&copy; 2022 DIESEL REFILL. ALL RIGHTS RESERVED</p>
+        </div>
+    </footer>
+    <script src="/javascript/script.js"></script>
+</body>
+</html>
