@@ -22,8 +22,8 @@ app.use(express.urlencoded({extended:true}))
 const mailTrain = mail.createTransport({
         service: "gmail",
         auth:{
-            user: "goodnessmyfolio@gmail.com",
-            pass: "twqt btkx hxjt fevi"
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     })
 
@@ -226,7 +226,8 @@ app.get("/mission", (req,res)=>{
 
 
 
-
-app.listen(3000, ()=>{
-    console.log("Server is running on port 3000\n http://localhost:3000")
+const port = process.env.PORT || 3000;
+app.listen(port, ()=>{
+    console.log("Server is running")
 })
+
